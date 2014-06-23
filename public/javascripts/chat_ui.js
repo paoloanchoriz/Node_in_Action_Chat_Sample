@@ -17,7 +17,7 @@ function processUserInput(chatApp, socket) {
 		}
 	} else {
 		chatApp.sendMessage($('#room').text(), message);
-		$('#messages').append(divEscapedContentElement(message));
+		$('#messages').append(divEscapedContentElement('me: ' + message));
 		$('#messages').scrollTop($('#messages').prop('scrollHeight'));
 	}
 
@@ -47,7 +47,7 @@ $(document).ready(function() {
  	});
 
  	socket.on('message', function(message) {
- 		var newElement = $('<div></div>').text(message.text);
+ 		var newElement = divEscapedContentElement(message.text);
  		$('#messages').append(newElement);
  	});
 
