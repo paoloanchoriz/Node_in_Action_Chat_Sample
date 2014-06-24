@@ -1,4 +1,3 @@
-
 var Chat = function(socket) {
 	this.socket = socket;
 };
@@ -41,4 +40,3 @@ Chat.prototype.processCommand = function(command) {
 	
 	return message;
 }
-
